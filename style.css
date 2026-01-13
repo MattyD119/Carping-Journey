@@ -1,0 +1,136 @@
+/* colours ecf4e8 cbf3bb abe7b2 93bfc7 */
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.grid-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template: 0.4fr 1fr 0.1fr / 1fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  background-color: #F3FDE8;
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.header {
+  background-color: #F3FDE8;
+  grid-column: span 5;
+  display: flex;
+  font-size: 1.5rem;
+  color: #062e03;
+  justify-content: space-between;
+}
+
+.sidebar {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: #F3FDE8;
+}
+
+.footer {
+  background-color: #93bfc7;
+  color: #003153;
+  grid-column: span 5;
+}
+
+.tile {
+  color: #062e03;
+  border-radius: 30px;
+  border: 5px solid #A6B79E;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 15px;
+  text-align: center;
+  
+}
+
+.list > li {
+  margin: 1rem;
+  list-style: none;
+  color: #062e03;
+}
+
+h1 {
+  margin-left: 2rem;
+}
+
+.fish-pic {
+  height: 150px;  
+}
+
+.tile > img {
+  width: 85%;
+  border-radius: 15px;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .grid-container {
+  display: grid;
+  grid-template: 0.4fr 1fr 0.1fr / 1fr 1fr 1fr 1fr;
+  }
+
+  .four {
+    display: none;
+  }
+
+  .carp-1 {
+    display: none;
+  }
+
+  .carp-3 {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+  .grid-container {
+  display: grid;
+  grid-template: 0.4fr 1fr 1fr 0.1fr / 1fr 1fr 1fr;
+  }
+
+  .header {
+  grid-column: span 3;
+  display: flex;
+  font-size: 1.5rem;
+  }
+
+  .sidebar {
+    grid-area: 2 / 1 / 4 / 2;
+    background-color: #F3FDE8;
+  }
+
+  .footer {
+    grid-column: span 3;
+  }
+
+  .carp-1 {
+    display: none;
+  }
+
+  .carp-3 {
+    display: none;
+  }
+
+  .carp-4 {
+    display: none;
+  }
+
+}
+
+/* .roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
