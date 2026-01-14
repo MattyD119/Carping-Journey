@@ -4,6 +4,7 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
+  background-color: #F3FDE8;
 }
 
 .grid-container {
@@ -11,18 +12,39 @@ body {
   display: grid;
   grid-template: 0.4fr 1fr 0.1fr / 1fr 1fr 1fr 1fr 1fr;
   gap: 3rem;
-  background-color: #F3FDE8;
+  /* background-color: #F3FDE8; */
   font-family: "Roboto", sans-serif;
   
+}
+
+.content-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template: auto 1fr auto / 1fr;
+  /* padding-left: min(5em, 8%); */
+  /* padding-right: min(5em, 8%); */
+  font-family: "Roboto", sans-serif;
 }
 
 .header {
   background-color: #F3FDE8;
   grid-column: span 5;
   display: flex;
-  font-size: 1.5rem;
+  
   color: #062e03;
   justify-content: space-between;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  border: 5px solid #062e03;
+  padding: min(5em, 8%);
+  margin: 0 2rem 2rem 2rem;
+  
 }
 
 .sidebar {
@@ -34,6 +56,11 @@ body {
   background-color: #93bfc7;
   color: #003153;
   grid-column: span 5;
+}
+
+.content-footer {
+  background-color: #93bfc7;
+  color: #003153;
 }
 
 .tile {
@@ -51,7 +78,7 @@ body {
   
 }
 
-.list > li {
+.list li {
   margin: 1rem;
   list-style: none;
   color: #062e03;
@@ -59,15 +86,38 @@ body {
 
 h1 {
   margin-left: 2rem;
+  font-size: clamp(1.8rem, calc(4vw + 1rem), 4rem);
 }
 
 .fish-pic {
   height: 150px;  
 }
 
+.content-pic {
+  width: max(175px, 25%);
+  
+}
+
+.left-pic {
+  float: left;
+  margin: 0 1.2rem 1.2rem 0;
+}
+
+.right-pic {
+  float: right;
+  margin: 0  0 1.2rem 1.2rem;
+}
+
 .tile > img {
   width: 85%;
   border-radius: 15px;
+}
+
+.tile-anchor {
+  display: flex; /* or display: flex if your div uses flexbox */
+  text-decoration: none;
+  color: inherit;
+  height: 100%; /* makes sure it fills the full height */
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -99,8 +149,6 @@ h1 {
 
   .header {
   grid-column: span 3;
-  display: flex;
-  font-size: 1.5rem;
   }
 
   .sidebar {
@@ -124,6 +172,46 @@ h1 {
     display: none;
   }
 
+}
+
+@media (max-width: 599px) {
+
+  .grid-container {
+    grid-template: 0.3fr 1fr 1fr 1fr 0.1fr / 1fr;
+    align-items: center;
+  }
+
+  .sidebar {
+    grid-area: span 1;
+    overflow-x: scroll;
+  }
+
+  .header {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tile {
+    margin: 0px;
+  }
+
+  .footer {
+    grid-column: span 1;
+  }
+
+  .carp-1 {
+    display: none;
+  }
+
+  .carp-3 {
+    display: none;
+  }
+
+  .carp-4 {
+    display: none;
+  }
 }
 
 /* .roboto-<uniquifier> {
